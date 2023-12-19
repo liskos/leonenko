@@ -1,0 +1,8 @@
+# (x  z)  (y  x)
+print('X Y Z')
+for x in 0,1:
+    for y in 0,1:
+        for z in 0,1:
+            f = (not(x) or z) and (not(y) or x)
+            if f == 1 or f == 0:
+                print(x,y,z, int(f))
