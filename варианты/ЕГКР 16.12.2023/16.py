@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(1020)
+
 def f(n):
     if n <= 3:
         return 1

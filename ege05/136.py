@@ -11,7 +11,10 @@ def alg(n):
         n = n + '1'
     return (int(n, 2))
 
+a = []
 for n in range(1, 100000):
     if 16 <= alg(n) <= 32:
-        k+=1
-        print(k)
+        a.append(alg(n))
+print(a)
+print(32-16+1 - len(set(a)))
+
