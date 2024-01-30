@@ -1,32 +1,26 @@
-def schisl(n):
-    k=''
+def dv(n):
+    s=''
     while n > 0:
-        if (n % 12 == 10):
-            k+='A'
-            n //= 12
-        elif (n % 12 == 11):
-            k+='B'
-            n //= 12
-        k+=str(n%12)
-        n //= 12
-    k = k[::-1]
-    if k[0] == '0':
-        k = k.replace('0', '', 1)
-    return k
-
-
+        ost = n % 12
+        if ost == 10:
+            s+='A'
+        elif ost == 11:
+            s+='B'
+        else:
+            s+=str(ost)
+        n//=12
+    return s[::-1]
 def alg(n):
-    m='0'
-    n = schisl(n)
-    if int(n, 12) % 4 == 0:
-        n = '2' + n + '64'
+    s=dv(n)
+    if n % 4 == 0:
+        s='2' + s + '64'
     else:
-        for i in n:
-            if int(i,12) > int(m, 12):
-                m=i
-        n=n+m
-    return int(n, 12)
+        s=s+max(s)
+    return int(s,12)
 
-for n in range(1, 10000):
-    if alg(n) > 1799:
-        print(n, alg(n))
+a = []
+print(alg(11),alg(12))
+for i in range(1,10000):
+    if alg(i) > 1799:
+        a.append(alg(i))
+print(min(a))
