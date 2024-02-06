@@ -1,18 +1,20 @@
-a = []
+
 
 
 def alg(n):
-    for i in str(n):
-        a.append(int(i))
-        a.sort()
+    a = sorted([int(i) for i in str(n)])
     if a[0] != 0:
         minimum = str(a[0]) + str(a[1])
         maximum = str(a[2]) + str(a[1])
-    else:
+    elif a[1] != 0:
         minimum = str(a[1]) + str(a[0])
         maximum = str(a[2]) + str(a[1])
-    a.clear()
+    else:
+        minimum = str(a[2]) + '0'
+        maximum = str(a[2]) + '0'
     return int(maximum) - int(minimum)
+
+
 k=0
 for i in range(700,801):
     if alg(i) == 80:
