@@ -1,16 +1,13 @@
 def alg(n):
-    n = str(n)[::-1]
-    n = [int(i) for i in n]
-    for i in 1,3,5,7,9,11,13,15:
-        n[i] = n[i] * 2
-        if str(n[i]) == 2:
-            n[i] = sum(str(n[i]))
-    if sum(n) % 10 == 0:
-        return True
-    else:
-        return False
-
-for i in range(1234567891011121, 1234567891011121 + 10000):
-    if alg(i) == True:
+    s=0
+    for i in range(16):
+        if i % 2 == 0:
+            s += 2*int(str(n)[i]) % 10 + 2*int(str(n)[i]) // 10
+        else:
+            s+=int(str(n)[i])
+    return s%10==0
+print(alg(4096830803098323))
+for i in range(1234567891011122, 1234567891011121 + 10000):
+    if alg(i):
         print(str(i)[-8:])
         break
