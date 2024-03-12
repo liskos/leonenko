@@ -1,13 +1,19 @@
 import sys
 sys.stdin = open('24.txt')
 a = input()
-k = 0
-g = []
-i = 0
-while a[i] != '+' and a[i+1] != '+':
-    k = k + 1
-    i = i + 1
-else:
-    g.append(k)
-    k = 0
-print(g)
+for i in '23456789':
+    a = a.replace(i, '1')
+m = 0
+t = ""
+for i in a:
+    if i == '1':
+        t += i
+        m = max(len(t), m)
+    elif t == '' and i == '+':
+        continue
+    elif i == '+' and t[-1]=="1":
+        t += i
+    elif i == '+' and t[-1] == '+':
+        t = ''
+
+print(m)
