@@ -1,14 +1,14 @@
-a = open('24.txt').readline()
-i = 0
-A = 0
-g = []
-while A < 2024:
-    if a[i] == 'A':
-        A = A + 1
-    i = i + 1
-    if A == 2024:
-        a = a[i+1:]
-        A = 0
-        g.append(i)
-        i = 0
-print(g)
+import sys
+sys.stdin = open('24.txt')
+a = input()
+t = ''
+m = 10**10
+
+for i in a:
+    t = t + i
+    while t.count('A') > 2024:
+        t = t[1:]
+    if t.count('A') == 2024:
+        m = min(m, len(t))
+        print(m)
+print(m)
