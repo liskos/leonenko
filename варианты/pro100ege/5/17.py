@@ -1,6 +1,6 @@
 a = [int(x) for x in open('17.txt')]
 maximum = -50000
-for i in range(0,4997):
+for i in range(0,4999):
     if str(a[i])[-1] == str(a[i+1])[-1] == str(a[i+2])[-1] == str(a[i+3])[-1]:
         maximum = max(maximum, a[i] + a[i+1] + a[i+2] + a[i+3])
 maximum_dvuznah = []

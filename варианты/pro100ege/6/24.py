@@ -6,4 +6,5 @@ for i in f:
     while 'XZZY' in t:
         t = t[1:]
     m = max(m, len(t))
+    print(t)
 print(m)
