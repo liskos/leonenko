@@ -1,5 +1,5 @@
 def f(i,k):
-    return (i+1,k), (i*2,k), (i,k+1), (i,k*2)
+    return (i,k+1), (i*2,k), (i+1,k), (i,k*2)
 
 a = [[' '] * 200 for _ in range(200)]
 
