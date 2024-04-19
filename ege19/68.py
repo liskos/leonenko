@@ -1,12 +1,11 @@
 def f(a,b):
-    return (a+2,b), (a*2,b), (a,b+2), (a,b*2)
-
+    return (a+1,b), (a,b+1), (a+b,b), (a,b+a)
 
 a = [[' '] * 300 for _ in range(300)]
 
 for i in range(300):
     for k in range(300):
-        if i + k >= 45:
+        if i + k >= 58:
             a[i][k] = '0'
 
 for i in range(300):
