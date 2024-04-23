@@ -1,2 +1,4 @@
-for x in range(ord('A'), ord('Z') + 1):
-    print(chr(x), end='')
+for x in range(1, 1000):
+    for y in range(x, 1000):
+        s = range(x, y)
+        print(s)
