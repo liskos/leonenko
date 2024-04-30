@@ -1,8 +1,17 @@
 f = open('24.txt').readline()
-s = ''
-a = set()
-for i in f:
-    s = s + i
-    if 'INFINITY' in s:
-        s =
-print(max(a))
+t = ''
+m = 0
+print(len(f))
+print("@" in f)
+f = f.replace("INFINITY", "@")
+print(len(f))
+for i in range(len(f)):
+    t += f[i]
+    while t.count('@') > 1000:
+        t = t[1:]
+    if t.count('@') == 1000:
+        m = max(m, len(t))
+    if i % 100000 == 0:
+        print(i // 100000, "%")
+
+print(m)

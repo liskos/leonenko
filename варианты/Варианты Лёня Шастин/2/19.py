@@ -1,7 +1,7 @@
 a = [' '] * 30000
 
 def alg(n):
-    return (n-7), (int(n/3))
+    return (n-7), n//3
 
 for k in range(120):
     if k < 117:

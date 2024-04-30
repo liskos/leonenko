@@ -1,7 +1,10 @@
-def alg(a,b, k = 0):
-    if a == b: return True
-    if a > b: return False
-    if a < b :
-        k = k + 1
-        return alg(a+10,b) + alg(a-5,b)
-print(f(1,) )
+a = set()
+a.add(1)
+
+for _ in range(15):
+    b = set()
+    for i in a:
+        b.add(i + 10)
+        b.add(i-5)
+    a = b.copy()
+print(len(a))
