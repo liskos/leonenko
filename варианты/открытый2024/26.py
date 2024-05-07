@@ -1,15 +1,11 @@
 import sys
 sys.stdin = open('26.txt')
-t = []
-k = 0
-for i in range(1, 10001):
-    s = input()
-    t.append(s)
-t = sorted(t, reverse=True)
-q = []
-for i in range(10000):
-    q.append(t[i])
-    if q[0] - t[i+1] >= 4:
-        k = k + 1
-        q.pop()
-        q.append(t[i+1])
+n = int(input())
+a = [int(input()) for _ in range(n)]
+a = sorted(a, reverse=True)
+b = [a[0]]
+z = [x for x in a if b[-1] - x >= 4]
+while z:
+    b.append(z[0])
+    z = [x for x in a if b[-1] - x >= 4]
+print(len(b), b[-1])
