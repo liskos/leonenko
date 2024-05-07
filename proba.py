@@ -1,4 +1,4 @@
-for x in range(1, 1000):
-    for y in range(x, 1000):
-        s = range(x, y)
-        print(s)
+import math
+a = math.log(5103, 9)
+b = 3 + math.log(7, 9)
+print(a == b)
