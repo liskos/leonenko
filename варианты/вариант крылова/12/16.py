@@ -1,6 +1,6 @@
-import sys
-from functools import lru_cache
+import sys, functools
 sys.setrecursionlimit(5000)
+@functools.lru_cache(None)
 def f(n):
     if n == 1: return 1
     if n == 2: return 2

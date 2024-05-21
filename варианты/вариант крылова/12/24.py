@@ -3,8 +3,7 @@ t = ''
 maximum = 0
 for i in f:
     t = t + i
-    if ('12' not in t) and ('21' not in t) and ('31' not in t) and ('13' not in t):
-        maximum = max(maximum, len(t))
-    else:
-        t = ''
+    while ('12' in t) or ('21' in t) or ('31' in t) or ('13' in t):
+        t = t[1:]
+    maximum = max(maximum, len(t))
 print(maximum)

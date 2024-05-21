@@ -6,5 +6,3 @@ for ip in net:
             3 * (ip.packed[2].__format__('b').count('1') + ip.packed[3].__format__('b').count('1'))):
         k = k + 1
 print(k)
-for ip in net:
-    print(ip.__format__("b"))

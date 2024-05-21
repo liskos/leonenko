@@ -28,5 +28,7 @@ for u in range(59):
         if a[u][i] == ' ' and all(a[m][q] in '13' for m,q in alg(u,i)):
             a[u][i] = '4'
 
+import sys
+sys.stdout = open("19.xls", mode="w")
 for i in range(1, 59):
     print(*a[i][1::], sep='\t')
