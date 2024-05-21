@@ -1,0 +1,5 @@
+f = open('24.txt').readline()
+f = f.replace('R', 'Q').replace('W', 'Q').replace('2', '1').replace('4', '1')
+f = f.replace('QQ', 'Q Q').replace('11', '1 1')
+a = f.split()
+print(max(a, key=len), len(max(a, key=len)))
